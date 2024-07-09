@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class RabbitMqConfig {
+public class RabbitMQConfig {
 
     @Value("${rabbitmq.queue.name}")
     private String queue;
