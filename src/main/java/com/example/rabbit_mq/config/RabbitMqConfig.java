@@ -17,8 +17,8 @@ public class RabbitMqConfig {
     @Value("${rabbitmq.exchange.name}")
     private String exchange;
 
-    @Value("${rabbitmq.binding.key}")
-    private String bindingKey;
+    @Value("${rabbitmq.routing.key}")
+    private String routingKey;
 
     // spring bean for rabbitmq queue
     // Queue of spring AMQP
@@ -42,7 +42,7 @@ public class RabbitMqConfig {
         return BindingBuilder
                 .bind(queue())
                 .to(exchange())
-                .with(bindingKey);
+                .with(routingKey);
     }
 
     // ConnectionFactory, RabbitTemplate, RabbitAdmin 등은 이미 auto configuring 됨
